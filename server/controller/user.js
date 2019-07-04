@@ -1,6 +1,7 @@
 let config  = require("../config.json");
 let user = require("../model/user");
 let router={};
+
 router.register = function(req, res) {
 
 	let ip = req.body.params;

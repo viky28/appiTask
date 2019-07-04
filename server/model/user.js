@@ -19,24 +19,24 @@ exports.register = function(p,cb){
 			}
 		})
 	})
-	.then(function(next){
-		db.user.find(function(err,res){
-			console.log("err and null ",err,res)
-			if(err || !res){
-				cb("ERROR",null)
-			} else {
-				cb(err,res)
-			}
-		})
-	})
 	// .then(function(next){
-	// 	p.saveTime = new Date();
-	// 	db.user.save(p, function(er,re){
-	// 		if(er || !re){
+	// 	db.user.find(function(err,res){
+	// 		console.log("err and null ",err,res)
+	// 		if(err || !res){
 	// 			cb("ERROR",null)
 	// 		} else {
-	// 			cb(er,re)
+	// 			cb(err,res)
 	// 		}
 	// 	})
 	// })
+	.then(function(next){
+		p.saveTime = new Date();
+		db.user.save(p, function(er,re){
+			if(er || !re){
+				cb("ERROR",null)
+			} else {
+				cb(er,re)
+			}
+		})
+	})
 }
