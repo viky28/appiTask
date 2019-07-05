@@ -14,13 +14,13 @@ Go to the sever folder and do **npm install**
 http://localhost:3001/app is main gateway.
 For every api you need to pass body like below
 
-*{
-*	"cmd":"register",
-*	"params":{
-*		"name":"Subu",
-*		"email":"subu@gmail.com",
-*		"mobile":"9090909090",
-*		"password":"qwert"
-*	}
-*}
+<{
+	"cmd":"register",
+	"params":{
+		"name":"Subu",
+		"email":"subu@gmail.com",
+		"mobile":"9090909090",
+		"password":"qwert"
+	}
+}>
 
