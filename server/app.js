@@ -4,6 +4,7 @@ let bodyParser = require('body-parser');
 let path = require('path');
 let config  = require("./config.json");
 let user = require("./controller/user");
+let product = require("./controller/product");
 
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json({}));
@@ -34,6 +35,8 @@ app.post('/app', function (req, res, next) {
     var cmd=req.body.cmd;
     if(user[cmd]){
         user[cmd](req,res)
+    } else if(product[cmd]){
+        product[cmd](req,res)
     } else {
         res.status(404).send("def");
     }

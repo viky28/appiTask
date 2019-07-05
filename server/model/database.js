@@ -15,9 +15,15 @@ database.getdb = function(next){
 				dbref = {
 					db:db,
 					user:db.collection('user'),
-					user_role:db.collection('user_role')
+					user_role:db.collection('user_role'),
+					category:db.collection('category'),
+					product:db.collection('product')
 				};
 				db.collection('user').createIndex( {mobile:1}, { unique: true }, function(err){
+					if(err)
+						console.log("ERROR", "unable to create unique index hohohohoo");
+				});
+				db.collection('category').createIndex( {categoryId:1}, { unique: true }, function(err){
 					if(err)
 						console.log("ERROR", "unable to create unique index hohohohoo");
 				});
